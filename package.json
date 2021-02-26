@@ -1,0 +1,13 @@
+{
+  "name": "movaicode3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bananaCompiler.js",
+  "scripts": {
+    "start": "node index.js",
+    "compile": "node split.banana"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

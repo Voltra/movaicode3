@@ -1,0 +1,34 @@
+const fs = require("fs");
+const { compile } = require("./bananaCompiler");
+
+const compiled = compile(`
+	function split(str){
+		const ret = [];
+		let tmp = "";
+
+		for(const car of str){
+			if(car === " "){
+				ret.push(tmp);
+				tmp = "";
+			}else{
+				tmp += car;
+			}
+		}
+
+		if(tmp.length > 0)
+			ret.push(tmp);
+
+		return ret;
+	}
+
+	console.log(split("Daft Punk"));
+`);
+
+const content = `
+
+eval(${compiled})
+
+`;
+
+fs.writeFileSync("split.js", content, "utf-8");
+
